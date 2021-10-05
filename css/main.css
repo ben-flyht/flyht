@@ -11,9 +11,9 @@
 }
 
 :root {
-  --brand-colour: #00d9ca; /* Robin's Egg Blue */
-  --dark-colour: #1F1F1F; /* Mine Shaft */
-  --light-colour: #F1F1F1; /* Seashell */
+  --colour-brand: #00CCCC;
+  --colour-dark: #0F0F0F;
+  --colour-light: #F0F0F0;
   --size-a: 1rem; /* 16px */
   --size-b: 1.5rem; /* 24px */
   --size-c: 2.25rem; /* 36px */
@@ -28,8 +28,8 @@ body {
   font-weight: 400;
   line-height: 1.5;
   font-family:'National 2', Tahoma, sans-serif;
-  color: var(--text-color);
-  background-color: var(--brand-colour);
+  color: var(--colour-dark);
+  background-color: var(--colour-brand);
   position:relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,18 +46,18 @@ h1 {
 }
 
 h1 span {
-  background-color: var(--dark-colour);
-  color: var(--light-colour);
+  background-color: var(--colour-dark);
+  color: var(--colour-light);
 }
 
 h2 {
   font-size: var(--size-b);
-  margin-bottom: var(--size-c);
+  margin-bottom: var(--size-b);
 }
 
 p, small {
   font-size: var(--size-a);
-  margin-bottom: var(--size-c);
+  margin-bottom: var(--size-a);
 }
 
 main, footer {
@@ -80,7 +80,7 @@ header {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background-color: var(--brand-colour);
+  background-color: var(--colour-brand);
   font-size: var(--size-a);
   z-index:1;
 }
@@ -89,18 +89,11 @@ header a {
   display:inline-flex;
 }
 
-a, a:hover {
-  transition:color ease 300ms;
-}
-
 a {
-  color: var(--dark-colour);
+  color: var(--colour-dark);
 }
 
-a:hover {
-  color: var(--light-colour);
-}
-
+a, a:hover,
 path, a:hover path,
 polygon, a:hover polygon {
   transition:fill ease 300ms;
@@ -110,23 +103,27 @@ svg {
   height: var(--size-b);
 }
 
+a:hover {
+  color:var(--colour-light);
+}
+
 a:hover path, a:hover polygon {
-  fill: var(--light-colour);
+  fill:var(--colour-light);
 }
 
 path, polygon {
-  fill:var(--dark-colour);
+  fill:var(--colour-dark);
 }
 
 ::-moz-selection {
-  background: var(--light-colour);
-  color: var(--dark-colour);
+  background: var(--colour-light);
+  color: var(--colour-dark);
   text-shadow: none;
 }
 
 ::selection {
-  background: var(--light-colour);
-  color: var(--dark-colour);
+  background: var(--colour-light);
+  color: var(--colour-dark);
   text-shadow: none;
 }
 

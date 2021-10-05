@@ -62,7 +62,7 @@ p, small {
 
 main, footer {
   margin:0 auto;
-  padding: var(--size-b);
+  padding: var(--size-b) var(--size-c);
   max-width:650px;
 }
 
@@ -76,7 +76,7 @@ header {
   top:0;
   right:0;
   left:0;
-  padding: var(--size-b);;
+  padding: var(--size-b) var(--size-c);
   display:flex;
   justify-content:space-between;
   align-items:center;

@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'National 2';
+  src: url('../fonts/National2Web-Medium.woff2') format('woff2');
+}
+
+:root {
+  --brand-colour: #00bfb2; /* Robin's Egg Blue */
+  --dark-colour: #1F1F1F; /* Mine Shaft */
+  --light-colour: #F1F1F1; /* Seashell */
+  --size-a: 1rem; /* 16px */
+  --size-b: 1.5rem; /* 24px */
+  --size-c: 2.25rem; /* 36px */
+  --size-d: 3.375rem; /* 54px */
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  font-family:'National 2', Tahoma, sans-serif;
+  color: var(--text-color);
+  background-color: var(--brand-colour);
+  position:relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  line-height: 1.3;
+  margin-bottom: var(--size-d);
+}
+
+h1 {
+  font-size: var(--size-c);
+  transform: rotate(-2deg);
+}
+
+h1 span {
+  background-color: var(--dark-colour);
+  color: var(--light-colour);
+}
+
+h2 {
+  font-size: var(--size-b);
+}
+
+p, small {
+  font-size: var(--size-a);
+  margin-bottom: var(--size-c);
+}
+
+main, footer {
+  margin:0 auto;
+  padding: var(--size-b);
+  max-width:650px;
+}
+
+main {
+  margin-top:20vh;
+  z-index:0;
+}
+
+header {
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  padding: var(--size-b);;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color: var(--brand-colour);
+  font-size: var(--size-a);
+  z-index:1;
+}
+
+header a {
+  display:inline-flex;
+}
+
+a, a:hover {
+  transition:color ease 300ms;
+}
+
+a {
+  color: var(--dark-colour);
+}
+
+a:hover {
+  color: var(--light-colour);
+}
+
+path, a:hover path,
+polygon, a:hover polygon {
+  transition:fill ease 300ms;
+}
+
+svg {
+  height: var(--size-b);
+}
+
+a:hover path, a:hover polygon {
+  fill: var(--light-colour);
+}
+
+path, polygon {
+  fill:var(--dark-colour);
+}
+
+::-moz-selection {
+  background: var(--light-colour);
+  color: var(--dark-colour);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--light-colour);
+  color: var(--dark-colour);
+  text-shadow: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: var(--size-d);
+  }
+  h2 {
+    font-size: var(--size-c);
+  }
+  p {
+    font-size: var(--size-b);
+  }
+  header {
+    background-color: revert;
+    font-size: var(--size-b);
+  }
+  svg {
+    height: var(--size-c);
+  }
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

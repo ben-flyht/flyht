@@ -1,10 +1,17 @@
 @font-face {
   font-family: 'National 2';
-  src: url('../fonts/National2Web-Medium.woff2') format('woff2');
+  src: url('../fonts/National2Web-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'National 2';
+  src: url('../fonts/National2Web-Bold.woff2') format('woff2');
+  font-weight: 700;
 }
 
 :root {
-  --brand-colour: #00bfb2; /* Robin's Egg Blue */
+  --brand-colour: #00d9ca; /* Robin's Egg Blue */
   --dark-colour: #1F1F1F; /* Mine Shaft */
   --light-colour: #F1F1F1; /* Seashell */
   --size-a: 1rem; /* 16px */
@@ -19,7 +26,7 @@ html {
 
 body {
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
   font-family:'National 2', Tahoma, sans-serif;
   color: var(--text-color);
   background-color: var(--brand-colour);
@@ -29,13 +36,13 @@ body {
 }
 
 h1, h2 {
-  line-height: 1.3;
-  margin-bottom: var(--size-d);
+  line-height: 1.35;
 }
 
 h1 {
   font-size: var(--size-c);
   transform: rotate(-2deg);
+  margin-bottom: var(--size-d);
 }
 
 h1 span {
@@ -45,6 +52,7 @@ h1 span {
 
 h2 {
   font-size: var(--size-b);
+  margin-bottom: var(--size-c);
 }
 
 p, small {

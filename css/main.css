@@ -93,7 +93,10 @@ a {
   color: var(--colour-dark);
 }
 
-a, a:hover,
+a, a:hover {
+  transition:color ease 300ms;
+}
+
 path, a:hover path,
 polygon, a:hover polygon {
   transition:fill ease 300ms;

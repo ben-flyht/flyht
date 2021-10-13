@@ -3,13 +3,12 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Ben Morrison -- Founder -- @bmozza
 
 # THANKS
 
-    <name>
+    Alistair Bradley, Dan Etheridge
 
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css

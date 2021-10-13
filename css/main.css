@@ -45,9 +45,9 @@ h1 {
   margin-bottom: var(--size-d);
 }
 
-h1 span {
-  background-color: var(--colour-dark);
+mark {
   color: var(--colour-light);
+  background-color: var(--colour-dark);
 }
 
 h2 {
@@ -97,6 +97,14 @@ a, a:hover {
   transition:color ease 300ms;
 }
 
+a:hover {
+  color:var(--colour-light);
+}
+
+a:hover path, a:hover polygon {
+  fill:var(--colour-light);
+}
+
 path, a:hover path,
 polygon, a:hover polygon {
   transition:fill ease 300ms;
@@ -104,14 +112,6 @@ polygon, a:hover polygon {
 
 svg {
   height: var(--size-b);
-}
-
-a:hover {
-  color:var(--colour-light);
-}
-
-a:hover path, a:hover polygon {
-  fill:var(--colour-light);
 }
 
 path, polygon {

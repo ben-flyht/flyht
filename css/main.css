@@ -9,15 +9,29 @@
   src: url('../fonts/National2Web-Bold.woff2') format('woff2');
   font-weight: 700;
 }
+  
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}  
 
 :root {
-  --colour-brand: #00CCCC;
-  --colour-dark: #0F0F0F;
   --colour-light: #F0F0F0;
+  --colour-dark: #081A32;
+  --colour-highlight: #57F1B2;
   --size-a: 1rem; /* 16px */
   --size-b: 1.5rem; /* 24px */
   --size-c: 2.25rem; /* 36px */
   --size-d: 3.375rem; /* 54px */
+  --size-e: 5.063rem; /* 81px */
+  --size-f: 7.594rem; /* 121px */
 }
 
 html {
@@ -29,35 +43,67 @@ body {
   line-height: 1.5;
   font-family:'National 2', Tahoma, sans-serif;
   color: var(--colour-dark);
-  background-color: var(--colour-brand);
+  background-color: var(--colour-light);
   position:relative;
+  padding-top: 100vh;
+  font-size: var(--size-a);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2 {
-  line-height: 1.35;
+header {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:100vh;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, blue, yellow, green, red);
+  background: linear-gradient(-45deg, #0B2B55, #081A32, #0A0B2B, #0E1C30);
+  background-size: 500% 500%;
+  animation: gradient 15s ease infinite;
+  z-index:1;
+  padding: 0 var(--size-c);
 }
 
-h1 {
-  font-size: var(--size-c);
-  transform: rotate(-2deg);
-  margin-bottom: var(--size-d);
+header h1 {
+  color: var(--colour-highlight);
+  max-width:650px;
 }
 
-mark {
+header nav {
+  position:absolute;
+  bottom:0;
+  top:auto;
+  background-color: transparent;
+}
+
+header a {
+  color: var(--colour-highlight);
+}
+
+header path, header polygon {
+  fill: var(--colour-highlight);
+}
+
+nav {
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  padding: var(--size-b) var(--size-c);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:0;
+  background-color: var(--colour-highlight);
+}
+
+nav a:hover {
   color: var(--colour-light);
-  background-color: var(--colour-dark);
-}
-
-h2 {
-  font-size: var(--size-b);
-  margin-bottom: var(--size-b);
-}
-
-p, small {
-  font-size: var(--size-a);
-  margin-bottom: var(--size-a);
 }
 
 main, footer {
@@ -67,26 +113,48 @@ main, footer {
 }
 
 main {
-  margin-top:20vh;
   z-index:0;
 }
 
-header {
-  position:fixed;
-  top:0;
-  right:0;
-  left:0;
-  padding: var(--size-b) var(--size-c);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background-color: var(--colour-brand);
-  font-size: var(--size-a);
-  z-index:1;
+article {
+  margin-bottom: var(--size-c);
 }
 
-header a {
-  display:inline-flex;
+h1, h2 {
+  line-height: 1.35;
+}
+
+h1 {
+  font-size: var(--size-d);
+}
+
+h2 {
+  font-size: var(--size-b);
+  margin-bottom: var(--size-b);
+}
+
+h3 {
+  font-size: var(--size-a);
+}
+
+p, small {
+  margin-bottom: var(--size-a);
+}
+
+article a {
+  background: linear-gradient(to bottom, var(--colour-highlight) 0%, var(--colour-highlight) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 1px 4px;
+  text-decoration: none;
+}
+
+article a, article a:hover, article a:focus {
+  transition: background-size 0.5s ease;
+}
+
+article a:hover, article a:focus {
+  background-size: 1px 100%;
 }
 
 a {
@@ -94,15 +162,15 @@ a {
 }
 
 a, a:hover {
-  transition:color ease 300ms;
-}
-
-a:hover {
-  color:var(--colour-light);
+  transition: color 0.5s ease;
 }
 
 a:hover path, a:hover polygon {
   fill:var(--colour-light);
+}
+
+svg {
+  height:var(--size-b);
 }
 
 path, a:hover path,
@@ -110,38 +178,33 @@ polygon, a:hover polygon {
   transition:fill ease 300ms;
 }
 
-svg {
-  height: var(--size-b);
-}
-
 path, polygon {
   fill:var(--colour-dark);
 }
 
 ::-moz-selection {
-  background: var(--colour-light);
-  color: var(--colour-dark);
+  background: var(--colour-dark);
+  color: var(--colour-light);
   text-shadow: none;
 }
 
 ::selection {
-  background: var(--colour-light);
-  color: var(--colour-dark);
+  background: var(--colour-dark);
+  color: var(--colour-light);
   text-shadow: none;
 }
 
 @media only screen and (min-width: 1024px) {
+  body {
+    font-size: var(--size-b);
+  }
   h1 {
-    font-size: var(--size-d);
+    font-size: var(--size-e);
   }
   h2 {
     font-size: var(--size-c);
   }
-  p {
-    font-size: var(--size-b);
-  }
-  header {
-    background-color: revert;
+  h3 {
     font-size: var(--size-b);
   }
   svg {
@@ -173,10 +236,6 @@ path, polygon {
     content: " (" attr(title) ")";
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
   a[href^="#"]::after,
   a[href^="javascript:"]::after {
     content: "";
@@ -192,10 +251,6 @@ path, polygon {
     page-break-inside: avoid;
   }
 
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
   thead {
     display: table-header-group;
   }

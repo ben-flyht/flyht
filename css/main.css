@@ -2,12 +2,14 @@
   font-family: 'National 2';
   src: url('../fonts/National2Web-Regular.woff2') format('woff2');
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'National 2';
   src: url('../fonts/National2Web-Bold.woff2') format('woff2');
   font-weight: 700;
+  font-display: swap;
 }
   
 @keyframes gradient {

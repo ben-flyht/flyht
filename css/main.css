@@ -56,7 +56,7 @@ header {
   top:0;
   left:0;
   right:0;
-  height:100vh;
+  height: 100vh;
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -76,8 +76,8 @@ header h1 {
 
 header nav {
   position:absolute;
-  bottom:0;
-  top:auto;
+  top:0;
+  bottom:auto;
   background-color: transparent;
 }
 
@@ -197,6 +197,10 @@ path, polygon {
 @media only screen and (min-width: 1024px) {
   body {
     font-size: var(--size-b);
+  }
+  header nav {
+    bottom:0;
+    top:auto;
   }
   h1 {
     font-size: var(--size-e);

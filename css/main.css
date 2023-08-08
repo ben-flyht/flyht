@@ -70,7 +70,7 @@ header {
   padding: 0 var(--size-c);
 }
 
-header h1 {
+header h2 {
   color: var(--colour-highlight);
   max-width:650px;
 }
@@ -126,12 +126,12 @@ h1, h2 {
 }
 
 h1 {
-  font-size: var(--size-d);
+  font-size: var(--size-b);
+  margin-bottom: var(--size-b);
 }
 
 h2 {
-  font-size: var(--size-b);
-  margin-bottom: var(--size-b);
+  font-size: var(--size-d);
 }
 
 h3 {
@@ -207,10 +207,10 @@ path, polygon {
     margin-bottom: var(--size-f);
   }
   h1 {
-    font-size: var(--size-e);
+    font-size: var(--size-c);
   }
   h2 {
-    font-size: var(--size-c);
+    font-size: var(--size-e);
   }
   h3 {
     font-size: var(--size-b);
@@ -269,13 +269,13 @@ path, polygon {
   }
 
   p,
-  h2,
+  h1,
   h3 {
     orphans: 3;
     widows: 3;
   }
 
-  h2,
+  h1,
   h3 {
     page-break-after: avoid;
   }

@@ -63,31 +63,13 @@ header {
   flex-direction:column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #0B2B55, #081A32, #0A0B2B, #0E1C30);
-  background-size: 500% 500%;
-  animation: gradient 15s ease infinite;
-  z-index:1;
+  background-color: var(--colour-dark);
   padding: 0 var(--size-c);
 }
 
 header h2 {
   color: var(--colour-highlight);
   max-width:650px;
-}
-
-header nav {
-  position:absolute;
-  top:0;
-  bottom:auto;
-  background-color: transparent;
-}
-
-header a {
-  color: var(--colour-highlight);
-}
-
-header path, header polygon {
-  fill: var(--colour-highlight);
 }
 
 nav {
@@ -100,7 +82,11 @@ nav {
   justify-content:space-between;
   align-items:center;
   z-index:0;
-  background-color: var(--colour-highlight);
+  background-color: var(--colour-dark);
+}
+
+nav a {
+  color: var(--colour-highlight);
 }
 
 nav a:hover {
@@ -180,7 +166,7 @@ polygon, a:hover polygon {
 }
 
 path, polygon {
-  fill:var(--colour-dark);
+  fill:var(--colour-highlight);
 }
 
 ::-moz-selection {
@@ -198,10 +184,6 @@ path, polygon {
 @media only screen and (min-width: 1024px) {
   body {
     font-size: var(--size-b);
-  }
-  header nav {
-    bottom:0;
-    top:auto;
   }
   article {
     margin-bottom: var(--size-f);
@@ -270,12 +252,14 @@ path, polygon {
 
   p,
   h1,
+  h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
 
   h1,
+  h2,
   h3 {
     page-break-after: avoid;
   }
